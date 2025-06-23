@@ -1,0 +1,6 @@
+apiVersion: v2
+name: myapp
+description: Simple Helm chart for myapp container
+type: application # Chart שמותקן כ-Release בקלאסטר
+version: 1.0.0 # גרסת-Chart; עלה בכל שינוי בתבניות
+appVersion: "dev" # המשתנה יתעדכן אוטומטית ל-SHA ע"י Jenkins
