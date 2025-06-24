@@ -2,7 +2,7 @@
 replicaCount: 1
 image:
   repository: host.docker.internal:5000/myapp # ← ה-Registry וה־Repo שלך
-  tag: "37" # ← Jenkins ישנה ל-SHA בכל Build
+  tag: "14" # ← Jenkins ישנה ל-SHA בכל Build
   pullPolicy: IfNotPresent
 imagePullSecrets: # ← ה-Secret שיצרת בקלאסטר
   - name: nexus-secret
