@@ -1,50 +1,59 @@
 # replicaCount: 1
-
+# 
 # image:
 #   repository: host.docker.internal:5000/myapp 
 #   tag: "dev" 
 #   pullPolicy: IfNotPresent
-
+# 
 # imagePullSecrets: 
 #   - name: nexus-secret
-  
 # service:
+
 #   type: ClusterIP
+
 #   port: 80 
 
 # serviceAccount:
+
 #   create: true 
+
 #   automount: true 
+
 #   name: "" 
+
 #   annotations: {}
 
 # ingress:
+
 #   enabled: false 
 
 # autoscaling:
-#   enabled: false
 
+#   enabled: false
 replicaCount: 1
 image:
-  repository: 10.0.0.6:5000/myapp 
-  tag: "dev" 
+  repository: 10.0.0.6:5000/myapp
+  tag: "36"
   pullPolicy: IfNotPresent
-
-imagePullSecrets: 
+imagePullSecrets:
   - name: nexus-secret
-  
 service:
+<<<<<<< HEAD
   type: NodePort
   port: 80
   targetPort: 80
   nodePort: 30080
 
+=======
+  type: ClusterIP
+  port: 80
+>>>>>>> b9a0ab9b0a99b641b2fa701bddbccf248635bf46
 serviceAccount:
-  create: true 
-  automount: true 
-  name: "" 
+  create: true
+  automount: true
+  name: ""
   annotations: {}
 ingress:
-  enabled: false 
+  enabled: false
 autoscaling:
   enabled: false
