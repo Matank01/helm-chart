@@ -25,7 +25,6 @@
 #   enabled: false
 
 replicaCount: 1
-
 image:
   repository: 10.0.0.6:5000/myapp 
   tag: "dev" 
@@ -43,9 +42,16 @@ serviceAccount:
   automount: true 
   name: "" 
   annotations: {}
-
 ingress:
+<<<<<<< HEAD
   enabled: false 
 
+=======
+  enabled: false # משאיר את Ingress מכובה
+  className: ""
+  annotations: {}
+  hosts: []
+  tls: []
+>>>>>>> 874193abb3b2ee2a09fe465003a82f79e9a3b3a3
 autoscaling:
   enabled: false
