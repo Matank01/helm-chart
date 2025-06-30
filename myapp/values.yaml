@@ -38,16 +38,11 @@ image:
 imagePullSecrets:
   - name: nexus-secret
 service:
-<<<<<<< HEAD
   type: NodePort
   port: 80
   targetPort: 80
   nodePort: 30080
 
-=======
-  type: ClusterIP
-  port: 80
->>>>>>> b9a0ab9b0a99b641b2fa701bddbccf248635bf46
 serviceAccount:
   create: true
   automount: true
