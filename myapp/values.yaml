@@ -1,33 +1,51 @@
-# --- values.yaml (רק השדות הרלוונטיים) ------------------
+# replicaCount: 1
+
+# image:
+#   repository: host.docker.internal:5000/myapp 
+#   tag: "dev" 
+#   pullPolicy: IfNotPresent
+
+# imagePullSecrets: 
+#   - name: nexus-secret
+  
+# service:
+#   type: ClusterIP
+#   port: 80 
+
+# serviceAccount:
+#   create: true 
+#   automount: true 
+#   name: "" 
+#   annotations: {}
+
+# ingress:
+#   enabled: false 
+
+# autoscaling:
+#   enabled: false
+
 replicaCount: 1
 
 image:
-  repository: host.docker.internal:5000/myapp # ← ה-Registry וה־Repo שלך
-  tag: "dev" # ← Jenkins ישנה ל-SHA בכל Build
+  repository: 10.0.0.6:5000/myapp 
+  tag: "dev" 
   pullPolicy: IfNotPresent
 
-imagePullSecrets: # ← ה-Secret שיצרת בקלאסטר
+imagePullSecrets: 
   - name: nexus-secret
-
+  
 service:
   type: ClusterIP
-  port: 80 # ← הפורט שעליו האפליקציה מקשיבה בתוך הקונטיינר
-# ----------------------------------------------------------
+  port: 80 
+
 serviceAccount:
-  create: true # יוצר ServiceAccount אוטומטית
-  automount: true # מצרף טוקן API לפודים
-  name: "" # ריק = Helm ייתן שם ברירת-מחדל
+  create: true 
+  automount: true 
+  name: "" 
   annotations: {}
 
 ingress:
-  enabled: false # משאיר את Ingress מכובה
-  className: ""
-  annotations: {}
-  hosts: []
-  tls: []
+  enabled: false 
 
 autoscaling:
   enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
