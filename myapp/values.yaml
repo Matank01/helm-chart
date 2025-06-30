@@ -8,32 +8,32 @@
 # imagePullSecrets: 
 #   - name: nexus-secret
 # service:
-
+# 
 #   type: ClusterIP
-
+# 
 #   port: 80 
-
+# 
 # serviceAccount:
-
+# 
 #   create: true 
-
+# 
 #   automount: true 
-
+# 
 #   name: "" 
-
+# 
 #   annotations: {}
-
+# 
 # ingress:
-
+# 
 #   enabled: false 
-
+# 
 # autoscaling:
-
+# 
 #   enabled: false
 replicaCount: 1
 image:
   repository: 10.0.0.6:5000/myapp
-  tag: "36"
+  tag: "37"
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: nexus-secret
@@ -42,7 +42,6 @@ service:
   port: 80
   targetPort: 80
   nodePort: 31644
-
 serviceAccount:
   create: true
   automount: true
